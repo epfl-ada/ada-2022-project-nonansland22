@@ -7,7 +7,7 @@ The last decade has been marked by emancipating and feminist movements. While ma
 
  ### Research questions
 How has the representation of female characters evolved in the film industry over time ? 
-A) Has the presence (eg. proportion) and attributes (eg. age) of female characters differ over time and how do they compare to male characters ?
+A) Has the presence (eg. proportion) and attributes (eg. age) of female characters differed over time and how do they compare to male characters ?
 B) How has women’s representation evolved in some of the most mainstream genres, and how homogenous was this representation across genres throughout time? 
 C) How are female characters depicted and how important are their roles relative to male characters using language analysis?
  
