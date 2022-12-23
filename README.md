@@ -1,16 +1,19 @@
 ### ada-2022-project-nonansland22
 
-# The evolution of women’s representation in the film industry
-
 ### Datastory 
 
 The website containing our datastory can be found [here](https://pauldfepfl.github.io/DatastoryNonNansLand/2022/12/21/datastory.html) 
+
+# The evolution of women’s representation in the film industry
+
+To follow this notebook, the datataset and the Supplement: Stanford CoreNLP-processed summaries need to be downloaded from https://www.cs.cmu.edu/~ark/personas/. These folders need to placed at the same level, in the the same directory of this notebook.
+
 ### Abstract 
-The last decade has been marked by emancipating and feminist movements. While many inequalities subsist to this day, women’s rights have progressed, along with mentalities. In this context, one could assess if before the last decade, a trend of improved women’s representation was translated in the film industry during the last fifty to a hundred years, and how this representation itself has evolved (i.e., the way women are depicted, and their relative importance compared to male characters). Firstly, it would be interesting to study women’s representation across many movies using different characteristics throughout the last century, combining meta-datas about the movies, their characters, and their summaries’ language analysis. Then, one could study in more detail and compare different movie genres to further gain insight on women’s representation and evaluate its homogeneity across the film industry. Lastly, one could use the movies’ countries of origin to assess progress in this representation in different world regions.
+The last decade has been marked by emancipating and feminist movements. While many inequalities subsist to this day, women’s rights have progressed, along with mindsets[1][2]. In this context, we are going to assess if before the last decade, a trend of improved women’s representation was translated in the film industry during the last fifty years, and how this representation itself has evolved (i.e., the way women are depicted, and their relative importance compared to male characters). Firstly, it would be interesting to study women’s representation across many movies using different characteristics throughout the last century, combining meta-datas about the movies, their characters, and their summaries’ language analysis. Then, we will study in more detail and compare different movie genres to further gain insight on women’s representation and evaluate its homogeneity across the film industry. Lastly, we will use the movies’ countries of origin to assess progress in this representation in different world regions.
 
  ### Research questions
-How has the representation of female characters evolved in the film industry over time ? 
-A) Has the presence (eg. proportion) and attributes (eg. age) of female characters differed over time and how do they compare to male characters ?
+How has the representation of female characters evolved in the film industry over time? 
+A) Has the presence (eg. proportion) and attributes (eg. age) of female characters differed over time and how do they compare to male characters?
 B) How has women’s representation evolved in some of the most mainstream genres, and how homogenous was this representation across genres throughout time? 
 C) How are female characters depicted and how important are their roles relative to male characters using language analysis?
  
@@ -24,18 +27,37 @@ C) How are female characters depicted and how important are their roles relative
  
  
 ### Methods
- 
-First, we properly loaded and labeled the movie and character metadata and plot summaries. Then, using the wiki ID, the common feature of these three datasets, we made an intersection to extract the movies for which we have access to the data available on all three datasets. This enabled linking all characters to the movie’s specifics and extracting language analysis from the plot summaries about each character. Finally, we used each dataset to extract the most relevant genres, the specifics of each character, and their importance and attributes. 
- 
-Using the obtained filtered movie metadata dataset, before looking at evolution through time we looked at general aspects of women representation in the whole dataset. This includes various metrics such as age distribution or women to men presence ratio. After observing general tendencies, we splitted the data in decades, in order to assess an eventual evolution. In a further analysis, we wanted to extract a combination of three genres as independent as possible from each other, with a relative importance in the film industry with a high movie count. Then, one could assess if the temporal evolution observed previously is equally present and homogeneous across genres.
- 
-Furthermore, we aimed to determine how the female characters' representation itself evolved throughout time, in terms of their relative importance in the scenario. To do so, we used language analysis of the plot summaries over time (with Stanford CoreNLP processed summaries), by observing the evolution of agent verbs, patient verbs and attributes associated with female characters. 
- 
-Lastly, we assessed if the change in women’s representation is progressive or if we notice any significant gap. We can also highlight if the evolution is shared across the film industry or if different popular genres have other impacts and evolutions. 
- 
- 
- 
- 
+
+**Step 1: Data pre-processing, dataset filtering and correction**
+
+- Loaded and labeled the movie and character metadata and plot summaries.
+- Intersection, using the wiki ID, the common feature of these three datasets, to extract the movies for which we have access to the data available on all three datasets.
+- Profiling.
+- Used wikidata to retrieve missing information such as gender, date of birth, characters'name.
+- Filtered data: removed non-relevant columns, characters with missing features of interest, characters with aberant values succh as negative values for age.
+
+**Step 2: Visualisation and exploratory data analysis**
+- Looked at general aspects of women representation in the whole dataset. This includes various metrics such as age distribution or women to men ratios and proportions.
+- After observing general tendencies, we splitted the data in decades, in order to assess an eventual evolution in the metrics observed previously.
+
+**Step 3: Analysis by genre and comparison to the previously obtained results**
+- Extracted a combination of three genres as independent as possible from each other and with a relative importance in the film industry due to a high movie count.
+- Assessed if the temporal evolution observed previously is equally present and homogeneous across genres. Studied evolution of age and ratios.
+
+**Step 4: Language analysis**
+We aimed to determine how the female characters' representation itself evolved throughout time, in terms of their relative importance in the scenario.
+
+- Used language analysis of the plot summaries over time (with Stanford CoreNLP processed summaries), by observing the evolution of agent verbs, patient verbs and attributes associated with female characters.
+- Highlighted if the evolution is shared across the film industry or if different popular genres reveal different trends and evolutions.
+- Vizualized qualitatively the results using wordclouds.
+
+**Step 5*: geographical case study Hollywood vs Bollywood**
+- Analyzed similar features studied on the overall population: Proportion of women and age distibution for Indian and American movies.
+- Language analysis of Indian movies compared to US movies
+- Vizualized qualitatively the results using wordclouds
+
+**Step 6: Population's reception to women-empowering movies**
+- Used metascore from metacritic to assess how movies with important and active main female characters were received by the society at the time the movie aired.
  
  
 ### Proposed timeline
@@ -58,43 +80,50 @@ Week 3: Data story, website, and README
 ### Organization within the team
  
 #### Team:
-Select together the subject with the highest potential and interests
+- Select together the subject with the highest potential and interests
+- Data exploration 
+- Understand formats, distributions, missing values of the data of each data frame individually. 
+- Define research questions and feasibility
+- Define pipeline and steps
 
-Data exploration 
-
-Define research questions and feasibility
-
-Define pipeline and steps
- 
 #### Individual/pair:
-Understand formats, distributions, missing values and correlations of the data of each data frame individually.
 
-Exploratory data analysis and visualization.
+Matthieu/Arnault:
+- Data pre-processing and dataset filtering
+- Genre selection and analysis. 
+- XML extraction pipeline.
+- Quantitative Language analysis and visualization
 
-Filter and transform the data from each dataset. Extract features and descriptive values from relevant variables of each data frame individually.
+Matthieu: 
+- Interactive plots and improved plot visualization 
+- Wikidata
+- Metacritic
+- Hollywood vs Bollywood
 
-Language and XML extraction pipeline.
+Arnault:
+- Wordcloud analysis
+- Readme
 
-Analysis and selection of relevant genres. Data analysis across time  for the selected genre.
+Paul/Jules: 
+- Visualisation and exploratory data analysis.
+- Analysis on the general filtered dataset. 
 
-Language analysis for Female character’s specificities extraction relative to male characters across time in the film industry.
-
-Visualize summaries language extraction to evaluate the quantity of attributes, relevance, role, and impact of female characters compared to male ones.
-
-Statistical tests to evaluate previous analysis and findings between male and female characters.
-
-Relevant plots to visualize women’s representation evolution in the film industry and its possible similarity across popular and independent genres.
-
-Case study eg. Hollywood vs Bollywood 
-
-Website
+Paul: 
+- Website
+- Profilling
+- Plots designing
  
- 
- 
-### Questions for TAs
- 
-Is it correct to separate the different genres the way we did? 
+Jules: 
+- Statistical tests to evaluate previous analysis and findings between male and female characters. 
+- Redaction of datastory
 
-Is it correct to divide by decade or should we use another timescale?
+
+### References
+[1] Our Favorite Milestones for Women This Decade [WWW Document], n.d. . Ellevest. URL https://www.ellevest.com/magazine/disrupt-money/women-milestones-2010s (accessed 12.23.22).
+
+
+[2] The 2010s the decade women fought back, Forbes. URL https://www.forbes.com/sites/lizelting/2019/12/20/the-2010s-the-decade-women-fought-back/?sh=68c5546421ad
+
+
 
 
