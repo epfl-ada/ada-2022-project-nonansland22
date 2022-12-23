@@ -1,6 +1,6 @@
 ### ada-2022-project-nonansland22
 
-### Datastory 
+# Datastory 
 
 The website containing our datastory can be found [here](https://pauldfepfl.github.io/DatastoryNonNansLand/2022/12/21/datastory.html) 
 
@@ -51,7 +51,7 @@ We aimed to determine how the female characters' representation itself evolved t
 - Highlighted if the evolution is shared across the film industry or if different popular genres reveal different trends and evolutions.
 - Vizualized qualitatively the results using wordclouds.
 
-**Step 5*: geographical case study Hollywood vs Bollywood**
+**Step 5: geographical case study Hollywood vs Bollywood**
 - Analyzed similar features studied on the overall population: Proportion of women and age distibution for Indian and American movies.
 - Language analysis of Indian movies compared to US movies
 - Vizualized qualitatively the results using wordclouds
